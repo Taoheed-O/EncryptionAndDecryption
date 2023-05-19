@@ -18,6 +18,9 @@
 from TextToDigraphConverter import convertPlainTextToDiagraphs
 from encryption import encryption
 from decryption import decryption
+from decryptedTextToDigraph import group
+from DigraphToTextConverter import convertDiagraphsToPlainText
+# from separator import separateUnspacedWords
 
 
 def main():
@@ -29,7 +32,13 @@ def main():
     cipherText = "".join(encryption(convertedPlainText, key))
     cipherText = cipherText.replace(',', '')
     print(cipherText)
-    print(decryption(cipherText, key))
+    decryptedText = decryption(cipherText, key)
+    print(decryptedText)
+    decryptedText = [x for x in decryptedText if x != ',']
+    digraphText = group(decryptedText, 2)
+    print(list(digraphText))
+    newText = convertDiagraphsToPlainText(list(digraphText))
+    print(newText)
 
 
 if __name__ == "__main__":
