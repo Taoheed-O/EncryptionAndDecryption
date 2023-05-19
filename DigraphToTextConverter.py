@@ -7,7 +7,6 @@ def convertDiagraphsToPlainText(digraphList):
         elif listDigraph[-1][1] == 'X':
             listDigraph[-1][1] = listDigraph[-1][1].replace('X', '')
 
-    return listDigraph
+    listDigraph = [y for x in listDigraph for y in x]
 
-
-print(convertDiagraphsToPlainText([('H', 'E'), ('L', 'X'), ('L', 'O'), ('W', 'O'), ('R', 'L'), ('D', 'X')]))
+    return ''.join(listDigraph)

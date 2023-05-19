@@ -16,8 +16,8 @@
 
 
 from TextToDigraphConverter import convertPlainTextToDiagraphs
-from encryption import encryption
-from decryption import decryption
+from playFairEncryption import encryption
+from playFairDecryption import decryption
 from decryptedTextToDigraph import group
 from DigraphToTextConverter import convertDiagraphsToPlainText
 # from separator import separateUnspacedWords
