@@ -1,2 +1,6 @@
 import wordninja
-def separator()
+
+
+def separator(text):
+    original_text = wordninja.split(text)
+    return original_text
