@@ -1,4 +1,4 @@
-def convertDiagraphsToPlainText(digraphList):
+def convertDigraphsToPlainText(digraphList):
     # convert list of tuples to list of list
     listDigraph = [list(ele) for ele in digraphList]
     for i in range(len(listDigraph) - 1):
@@ -6,7 +6,10 @@ def convertDiagraphsToPlainText(digraphList):
             listDigraph[i][1] = listDigraph[i][1].replace('X', '')
         elif listDigraph[-1][1] == 'X':
             listDigraph[-1][1] = listDigraph[-1][1].replace('X', '')
+        else:
+            pass
 
     listDigraph = [y for x in listDigraph for y in x]
 
     return ''.join(listDigraph)
+
