@@ -1,26 +1,9 @@
-# from playfairEncryption import encrypt
-# from playfairDecryption import decrypt
-#
-# # Example usage:
-# key = "PLAYFAIREXAMPLE"
-# plaintext = "HELLO WORLD"
-#
-# # Encryption
-# ciphertext = encrypt(plaintext, key)
-# print("Cipher text:", ciphertext)
-#
-# # Decryption
-# decrypted_text = decrypt(ciphertext, key)
-# print("Decrypted text:", decrypted_text)
-#
-
-
 from TextToDigraphConverter import convertPlainTextToDiagraphs
 from playFairEncryption import encryption
 from playFairDecryption import decryption
 from decryptedTextToDigraph import group
 from DigraphToTextConverter import convertDigraphsToPlainText
-# from separator import separator
+from separator import separator
 
 
 def main():
@@ -31,16 +14,16 @@ def main():
     convertedPlainText = convertPlainTextToDiagraphs(plainText)
     cipherText = "".join(encryption(convertedPlainText, key))
     cipherText = cipherText.replace(',', '')
-    print(cipherText)
+    print('Encoded text: ', cipherText)
 
     decryptedText = decryption(cipherText, key)
-    print(decryptedText)
+    print('Decoded text: ', decryptedText)
 
     decryptedText = [x for x in decryptedText if x != ',']
     digraphText = group(decryptedText, 2)
 
     newText = convertDigraphsToPlainText(list(digraphText))
-    print(newText)
+    print('original text: ', separator(newText))
 
 
 if __name__ == "__main__":
