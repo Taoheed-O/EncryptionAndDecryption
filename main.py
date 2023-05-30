@@ -32,8 +32,10 @@ def main():
     decryptedText = decryption(railfenceDecryptedText, key)
     # print('playfair Cipher Decoded text: ', decryptedText)
 
+
     decryptedText = [x for x in decryptedText if x != ',']
     digraphText = group(decryptedText, 2)
+
 
     # returning the whole text in uppercase...
     newText = convertDigraphsToPlainText(list(digraphText))
